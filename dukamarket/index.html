@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./slider/swiper-bundle.min.css">
+
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="wrapper">
+            <section class="header__menu">
+                <div class="categories">
+                    <div class="dukamarket">
+                        <span class="dukamarket__item">dukamarket</span>
+                    </div>
+                    <div class="category">
+                        <div class="category__items">
+                            <div class="category__items__item">All Categories <a href="#" class="icon__category"
+                                    onmouseover="hideList()"><i class='bx bx-chevron-down'></i></a></div>
+                            <div class="horizantal__sub__list">
+                                <ul class="list">
+                                    <li class="list__menu"><a href="#">All Categories</a></li>
+                                    <li class="list__menu"><a href="#">Accessories</a></li>
+                                    <li class="list__menu"><a href="#">Basketball</a></li>
+                                    <li class="list__menu"><a href="#">Customise</a></li>
+                                    <li class="list__menu"><a href="#">Decor</a></li>
+                                    <li class="list__menu"><a href="#">Dining & Kitchen</a></li>
+                                    <li class="list__menu"><a href="#">Exercise</a></li>
+                                    <li class="list__menu"><a href="#">Girls</a></li>
+                                    <li class="list__menu"><a href="#">Lifestyle</a></li>
+                                    <li class="list__menu"><a href="#">Lighting</a></li>
+                                    <li class="list__menu"><a href="#">Living Room</a></li>
+                                    <li class="list__menu"><a href="#">Office Furniture</a></li>
+                                    <li class="list__menu"><a href="#">Outdoor & Gift</a></li>
+                                    <li class="list__menu"><a href="#">Running</a></li>
+                                    <li class="list__menu"><a href="#">Sectional Sofas</a></li>
+                                    <li class="list__menu"><a href="#">Tables & Chair</a></li>
+                                    <li class="list__menu"><a href="#">Top Selling</a></li>
+                                    <li class="list__menu"><a href="#">Training</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="search">
+                            <input type="text" class="inpt" placeholder="Search for products..." onkeyup="search()">
+                            <button type="button" id="btn"><i class='bx bx-search btn'></i></button>
+                        </div>
+                    </div>
+                    <div class="login__wishlist">
+                        <div class="login__wishlist__list">
+                            <div class="login">
+                                <div class="login__wishlist__list__icon">
+                                    <i class='bx bx-user'></i>
+                                </div>
+                                <div class="login__wishlist__list__inform">
+                                    <span class="login__color">Login</span>
+                                    <span>Login/Register</span>
+
+                                </div>
+                            </div>
+                            <div class="login">
+                                <div class="login__wishlist__list__icon">
+                                    <i id="card__icons" class='bx bx-heart'></i>
+                                    <span class="cartAmount">0</span>
+                                </div>
+                                <div class="login__wishlist__list__inform">
+                                    <span class="login__color">Favorite</span>
+                                    <span>My Wishlist</span>
+                                </div>
+                            </div>
+                            <div class="login">
+                                <div class="login__wishlist__list__icon">
+                                    <i id="card__icon" class='bx bx-shopping-bag'></i>
+                                    <span class="cartAmount">0</span>
+                                </div>
+                                <div class="login__wishlist__list__inform">
+                                    <span class="login__color">Your Cart:</span>
+                                    <span>$0.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- For Wishlist -->
+                        <div class="card__wishlist">
+                            <div class="card_title">Wishlist<i class='bx bx-x' id="close__card__wishlist"></i>
+                            </div>
+                            <div class="card_inner">
+                                <ul class="card_mini">
+                                    <!-- <li class="card_mini_details">
+                                        <img src="./img/mainimg3.jpg" alt="">
+                                        <div class="product_item">
+                                            <div class="product_list">
+                                                <a href="#" class="product_name">Somic G951 pink Gaming Headset</a>
+                                            </div>
+                                            <div class="quantity_card">
+                                                <div class="info">
+                                                    <span class="money">$190.45</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="close_item"><i class='bx bx-x'></i></a>
+                                    </li> -->
+
+                                </ul>
+                                <div class="custom_bottom">
+                                    <button class="view_detail">View Cart</button>
+                            </div>
+                            </div>
+                        </div>
+                        <!-- For AddtoCard -->
+                        <div class="card">
+                            <div class="card_title">Shopping Cart<i class='bx bx-x' id="close__card"></i>
+                            </div>
+                            <div class="card_inner">
+                                <ul class="card_mini">
+                                    <!-- <li class="card_mini_details">
+                                        <img src="./img/mainimg3.jpg" alt="">
+                                        <div class="product_item">
+                                            <div class="product_list">
+                                                <a href="#" class="product_name">Somic G951 pink Gaming Headset</a>
+                                            </div>
+                                            <div class="quantity_card">
+                                                <div class="info">
+                                                    <span class="money">$190.45</span>
+                                                </div>
+                                                <div class="group_quantity_card">
+                                                    <input type="number" min="1" class="quantity">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="close_item"><i class='bx bx-x'></i></a>
+                                    </li> -->
+
+                                </ul>
+                                <div class="custom_bottom">
+                                    <div class="subtotal">
+                                        <span class="subtotal_title">Total</span>
+                                        <span class="subtotal_money">$0</span>
+                                    </div>
+                                    <button class="view_detail">View Cart</button>
+                                    <button class="check_btn">Buy Now</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="header__bottem">
+            <div class="container">
+                <div class="vertical__menu">
+                    <div class="vertical__sub__menu">
+                        <a href="#" class="vertical__icon__close"><i class='bx bx-x'></i></a>
+                        <a href="#" class="vertical__icon"><i class='bx bx-menu'></i></a>
+                        <h3 class="active">SHOP BY DEPARTMENT</h3>
+                    </div>
+                    <div class="horizantal__sub__menu">
+                        <ul class="list">
+                            <li class="list__menu"><a href="#">Computers</a></li>
+                            <li class="list__menu"><a href="#">Tvs & Audios</a></li>
+                            <li class="list__menu"><a href="#">Headphones</a></li>
+                            <li class="list__menu"><a href="#">Printers & Ink</a></li>
+                            <li class="list__menu"><a href="#">Home Theatres</a></li>
+                            <li class="list__menu"><a href="#">PC Components</a></li>
+                            <li class="list__menu"><a href="#">Ultrabooks</a></li>
+                            <li class="list__menu"><a href="#">Smartwatches</a></li>
+                            <li class="list__menu"><a href="#">Cameras & Photograpy</a></li>
+                            <li class="list__menu"><a href="#">Smart Phones & Tablets</a></li>
+                            <li class="list__menu"><a href="#">Video Games & Consoles</a></li>
+                            <li class="list__menu"><a href="#">Toys & Hobbies</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="navbar">
+                    <div class="subnav">
+                        <button class="subnavbtn">Home <i class="fa fa-caret-down"></i></button>
+                        <div class="subnav-content">
+                            <a href="#homepage1">Home Page 1</a>
+                            <a href="#homepage2">Home Page 2</a>
+                            <a href="#homepage3">Home Page 3</a>
+                            <a href="#homepage4">Home Page 4</a>
+                            <a href="#homepage5">Home Page 5</a>
+                            <a href="#homepage6">Home Page 6</a>
+                            <a href="#homepage7">Home Page 7</a>
+                            <a href="#homepage8">Home Page 8</a>
+                            <a href="#homepage9">Home Page 9</a>
+                            <a href="#homepage10">Home Page 10</a>
+                            <a href="#homepage11">Home Page 11</a>
+                            <a href="#homepage12">Home Page 12</a>
+                            <a href="#homepage13">Home Page 13</a>
+                        </div>
+                    </div>
+                    <div class="subnav">
+                        <button class="subnavbtn">Shop <i class="fa fa-caret-down"></i></button>
+                        <div class="subnav-content">
+                            <div class="sub__menu">
+                                <h4 class="sub__menu__title">Shop Layout</h4>
+                                <a href="#">SideBar Left</a>
+                                <a href="#">SideBar Left</a>
+                                <a href="#">SideBar Left</a>
+                                <a href="#">SideBar Left</a>
+                                <a href="#">SideBar Left</a>
+                                <a href="#">SideBar Left</a>
+                            </div>
+                            <div class="sub__menu">
+                                <h4 class="sub__menu__title">Product Layout</h4>
+                                <a href="#">SideBar Left</a>
+                                <a href="#">SideBar Left</a>
+                                <a href="#">SideBar Left</a>
+                                <a href="#">SideBar Left</a>
+                                <a href="#">SideBar Left</a>
+                                <a href="#">SideBar Left</a>
+                            </div>
+                            <div class="sub__menu">
+                                <h4 class="sub__menu__title">Other Shops Page</h4>
+                                <a href="#">SideBar Left</a>
+                                <a href="#">SideBar Left</a>
+                                <a href="#">SideBar Left</a>
+                                <a href="#">SideBar Left</a>
+                                <a href="#">SideBar Left</a>
+                                <a href="#">SideBar Left</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subnav">
+                        <button class="subnavbtn">Page <i class="fa fa-caret-down"></i></button>
+                        <div class="subnav-content">
+                            <a href="#">My Account</a>
+                            <a href="#">Contact us</a>
+                            <a href="#">About us</a>
+                            <a href="#">FAQs</a>
+                            <a href="#">Site Boxed</a>
+                            <a href="#">404</a>
+                        </div>
+                    </div>
+                    <div class="subnav">
+                        <button class="subnavbtn">Blog <i class="fa fa-caret-down"></i></button>
+                        <div class="subnav-content">
+                            <a href="#">Grid no sidebar</a>
+                            <a href="#">Grid no sidebar</a>
+                            <a href="#">Grid no sidebar</a>
+                            <a href="#">Grid no sidebar</a>
+                            <a href="#gridnosidebar5">Grid no sidebar</a>
+                            <a href="#">Grid no sidebar</a>
+
+                        </div>
+                    </div>
+                    <a href="#about">About</a>
+                    <a href="#contact__us">Contact Us</a>
+                </div>
+                <div class="free__shop">
+                    <span>Spend $120 more and get free shipping!</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+
+        <div class="slider">
+            <div class="caption">
+                <h1 class="title">Sport Editon</h1>
+                <h2 class="subtitle">Best Choice of the year</h2>
+                <h4 class="sales">DISCOUNT 20% ON PRODUCTS & FREE SHIPPING</h4>
+            </div>
+            <button id="btn__left"><i class='bx bx-chevrons-left'></i></button>
+            <button id="btn__right"><i class='bx bx-chevrons-right'></i></button>
+        </div>
+        <div class="payment">
+            <div class="delivery">
+                <div class="delivery__icons">
+                    <i class='bx bxs-truck'></i>
+                </div>
+                <div class="content">
+                    <h3 class="content__title">FREE DELIVERY</h3>
+                    <p class="content__subtitle">For all orders over $120</p>
+                </div>
+            </div>
+            <div class="delivery">
+                <div class="delivery__icons">
+                    <i class='bx bx-credit-card'></i>
+                </div>
+                <div class="content">
+                    <h3 class="content__title">SAFE PAYMENT</h3>
+                    <p class="content__subtitle">100% secure payment</p>
+                </div>
+            </div>
+            <div class="delivery">
+                <div class="delivery__icons">
+                    <i class='bx bx-chat'></i>
+                </div>
+                <div class="content">
+                    <h3 class="content__title">24/7 HELP CENTER</h3>
+                    <p class="content__subtitle">Dedicated 24/7 support</p>
+                </div>
+            </div>
+            <div class="delivery">
+                <div class="delivery__icons">
+                    <i class='bx bx-id-card'></i>
+                </div>
+                <div class="content">
+                    <h3 class="content__title">FRIENDLY SERVICES</h3>
+                    <p class="content__subtitle">30 day satisfaction guarantee</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="banner">
+            <div class="banner_info">
+                <div class="banner_info_details-1">
+                    <div class="banner__content">
+                        <h3>Intelligent <br />New Touch Control</h3>
+                        <p class="banner__content_text">Discount 20% On Products</p>
+                    </div>
+
+                </div>
+                <div class="banner_info_details-2">
+                    <div class="banner__content">
+                        <h3>On-Sale <br />Best Prices Headphone</h3>
+                        <p class="banner__content_text">Limited Time: Online Only!</p>
+                    </div>
+
+                </div>
+
+                <div class="banner_info_details-3">
+                    <div class="banner__content">
+                        <h3>Hot Sale <br />Super Laptops 2022</h3>
+                        <p class="banner__content_text">Free Shipping All Order</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="counter">
+            <div class="counter__title">Top Deals Of The Day</div>
+            <div class="Hurry__up">
+                <span class="Hurry__up__title">Hurry Up! Offer ends in:</span>
+                <p id="countdown"></p>
+            </div>
+        </div>
+        <div class="slider__container swiper mySwiper">
+            <div class="slider__content swiper-wrapper">
+                <div class="products swiper-slide">
+                    <div class="product">
+                        <div class="card">
+                            <div class="card__content">
+                                <div class="image">
+                                    <img src="./img/1.webp" alt="" class="content_image">
+                                </div>
+
+                                <div class="icons">
+                                    <div class="sales__icon">
+                                        <h6 class="value">-22<span class="percent">%</span></h6>
+                                    </div>
+
+                                    <div class="follow__icons">
+                                        <ul class="follow__icons__info">
+                                            <li class="list">
+                                                <a href="#"><i class="fa-sharp fa-solid fa-eye"></i></a>
+                                            </li>
+                                            <li class="list">
+                                                <a href="#"><i class="fa-solid fa-layer-group"></i></a>
+                                            </li>
+                                            <li class="list">
+                                                <a href="#"><i class="fa-regular fa-heart"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <div class="container">
+                                    <div class="product__name">
+                                        <h2 class="name">Bluetooth Headphones Over Ear</h2>
+                                    </div>
+
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+
+                                    <div class="prices">
+                                        <h6 class="price"><span class="price_value">$40.23</span></h6>
+                                        <h6 class="old-price">$<span class="old-priceValue">70.53</span></h6>
+                                    </div>
+                                </div>
+
+                                <div class="product__stock">
+                                    <div class="product__stock__sold">
+                                        <span class="label">Sold:</span>
+                                        <span class="value">85</span>
+                                    </div>
+                                    <div class="product__stock__available">
+                                        <span class="label">Available:</span>
+                                        <span class="value">15</span>
+                                    </div>
+                                </div>
+
+                                <button class="btn__add">Add to card</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+           
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+        </div>
+        <div class="products__item">
+        <div class="bestseller__product">
+            <div class="content__banner">
+                <h5 class="banner__title__h5">Bestseller Products</h5>
+                <h2 class="banner__title__h2">PC & Docking Station</h2>
+                <h6 class="banner__title__h6">Discount 20% Off,Top Quality Products</h6>
+            </div>
+        </div>
+        <div class="accessories__product">
+            <div class="content__banner">
+                <h5 class="banner__title__h5">Featured Products</h5>
+                <h2 class="banner__title__h2">Accessories Iphone</h2>
+                <h6 class="banner__title__h6">Free Shipping All Order Over $99</h6>
+            </div>
+        </div>
+        </div>
+        <div class="main__products__content">
+            <div class="wrap__title">
+                <div class="second__title">Top Selling Products</div>
+                <div class="items__info">
+                   <ul class="items__list">
+                    <li class="items__list__product">
+                        <a href="#">Laptop & Computer</a>
+                    </li>
+                    <li class="items__list__product">
+                        <a href="#">Cellphone</a>
+                    </li>
+                    <li class="items__list__product">
+                        <a href="#">Speaker & Audio</a>
+                    </li>
+                    <li class="items__list__product">
+                        <a href="#">Video Game</a>
+                    </li>
+                   </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slider__container swiper mySwiper">
+            <div class="slider__content swiper-wrapper">
+                <div class="products swiper-slide">
+                    <div class="product">
+                        <div class="card">
+                            <div class="card__content">
+                                <div class="image">
+                                    <img src="./img/1.webp" alt="" class="content_image">
+                                </div>
+
+                                <div class="icons">
+                                    <div class="sales__icon">
+                                        <h6 class="value">-22<span class="percent">%</span></h6>
+                                    </div>
+
+                                    <div class="follow__icons">
+                                        <ul class="follow__icons__info">
+                                            <li class="list">
+                                                <a href="#"><i class="fa-sharp fa-solid fa-eye"></i></a>
+                                            </li>
+                                            <li class="list">
+                                                <a href="#"><i class="fa-solid fa-layer-group"></i></a>
+                                            </li>
+                                            <li class="list">
+                                                <a href="#"><i class="fa-regular fa-heart"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <div class="container">
+                                    <div class="product__name">
+                                        <h2 class="name">Bluetooth Headphones Over Ear</h2>
+                                    </div>
+
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+
+                                    <div class="prices">
+                                        <h6 class="price"><span class="price_value">$40.23</span></h6>
+                                        <h6 class="old-price">$<span class="old-priceValue">70.53</span></h6>
+                                    </div>
+                                </div>
+
+                                <div class="product__stock">
+                                    <div class="product__stock__sold">
+                                        <span class="label">Sold:</span>
+                                        <span class="value">85</span>
+                                    </div>
+                                    <div class="product__stock__available">
+                                        <span class="label">Available:</span>
+                                        <span class="value">15</span>
+                                    </div>
+                                </div>
+
+                                <button class="btn__add">Add to card</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+           
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+        </div>
+        <div class="featured__products">
+           <div class="header__title">
+            <h3>Top Featured Products</h3>
+            <h4>See all products <i class='bx bx-chevron-right arrow'></i></h4>
+           </div>
+            <div class="product">
+                <div class="card1">
+                    <div class="card__content">
+                        <div class="image">
+                            <img src="./img/1.webp" alt="">
+                        </div>
+                        <div class="card__info">
+                            <h4 class="title">LG Unlocked Smartphone Platinum</h4>
+                            <div class="star__rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bx-star' ></i>
+                                <i class='bx bx-star' ></i>
+                            </div>
+                            <span class="price">$40.33</span>
+                            <p class="text">Designed by Hans J. Wegner in 1949 as one of the first models created especially for Carl Hansen & Son, and produced since 1950. The last of a series of...</p>
+                            <button class="btn__add">Add to card</button>
+                            <span class="add__wish"><i class='bx bx-heart xx'></i></span>
+                           </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__content">
+                        <div class="image">
+                            <img src="./img/2.webp" alt="">
+                        </div>
+                        <div class="card__info">
+                            <h4 class="title">LG Unlocked Smartphone Platinum</h4>
+                            <div class="star__rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bx-star' ></i>
+                                <i class='bx bx-star' ></i>
+                            </div>
+                            <span class="price">$40.33</span>
+                           </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__content">
+                        <div class="image">
+                            <img src="./img/3.webp" alt="">
+                        </div>
+                        <div class="card__info">
+                            <h4 class="title">LG Unlocked Smartphone Platinum</h4>
+                            <div class="star__rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bx-star' ></i>
+                                <i class='bx bx-star' ></i>
+                            </div>
+                            <span class="price">$40.33</span>
+                           </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__content">
+                        <div class="image">
+                            <img src="./img/4.webp" alt="">
+                        </div>
+                        <div class="card__info">
+                            <h4 class="title">LG Unlocked Smartphone Platinum</h4>
+                            <div class="star__rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bx-star' ></i>
+                                <i class='bx bx-star' ></i>
+                            </div>
+                            <span class="price">$40.33</span>
+                           </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__content">
+                        <div class="image">
+                            <img src="./img/5.webp" alt="">
+                        </div>
+                        <div class="card__info">
+                            <h4 class="title">LG Unlocked Smartphone Platinum</h4>
+                            <div class="star__rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bx-star' ></i>
+                                <i class='bx bx-star' ></i>
+                            </div>
+                            <span class="price">$40.33</span>
+                           </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container__banner">
+            <div class="banner__content">
+                <div class="box">
+                    <h5 class="text">HOT DEAL</h5>
+                    <img src="./img/f1.webp" alt="">
+                    <h3 class="box__text">Sale 30% Off<br>
+                        Top Computer Case <br>Gaming</h3>
+                </div>
+                <div class="box_parent">
+                    <div class="box1">
+                        <h3 class="box1__text">Electronic Deals</h3>
+                        <img src="./img/f2.webp" alt="">
+                        <h5>Laptop, Computer, Smartphone, Gampad</h5>
+                        <button class="btn__box">Learn More</button>
+                    </div>
+                    <div class="box2">
+                        <img src="./img/f3.avif" alt="">
+                        <h3>Hot Products <br> Laptop Ultra 4K 16”</h3>
+                        <h5>Discount 20% On Products</h5>
+                    </div>
+                </div>
+               
+                <div class="box">
+                    <img src="./img/f4.webp" alt="">
+                    <h5 class="text">NEW ARIVALS</h5>
+                    <h3 class="box__text">Sport Edition <br> Best Choice Of The Year
+                        </h3>
+
+
+                </div>
+
+            </div>
+        </div>  
+        <div class="footer__slider">
+            <div class="container swiper mySwiper">
+                <ul class="container__list swiper-wrapper">
+                    <li class="list__info swiper-slide">
+                        <img src="./img/footer1.avif" alt="">
+                    </li>
+                    <li class="list__info swiper-slide">
+                        <img src="./img/footer2.avif" alt="">
+                    </li>
+                    <li class="list__info swiper-slide">
+                        <img src="./img/footer3.avif" alt="">
+                    </li>
+                    <li class="list__info swiper-slide">
+                        <img src="./img/footer4.avif" alt="">
+                    </li>
+                    <li class="list__info swiper-slide">
+                        <img src="./img/footer5.avif" alt="">
+                    </li>
+                    <li class="list__info swiper-slide">
+                        <img src="./img/footer1.avif" alt="">
+                    </li>
+                    <li class="list__info swiper-slide">
+                        <img src="./img/footer2.avif" alt="">
+                    </li>
+                </ul>
+                <div class="swiper-button-next swiper-navBtn"></div>
+                <div class="swiper-button-prev swiper-navBtn"></div>
+                <!-- <div class="swiper-pagination"></div> -->
+            </div>
+            
+        </div>
+    </main>
+
+  
+    <script src="./slider/swiper-bundle.min.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>

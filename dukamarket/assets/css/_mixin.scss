@@ -1,0 +1,19 @@
+@mixin d-flex($flex, $justify, $align, $direction) {
+    display: $flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+@mixin d-grid($grid,$columns,$row){
+    display: $grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $row;
+}
+
+@mixin MyCard ($name,$duration,$delay,){
+    animation: $name;
+    animation-duration: $duration;
+    animation-delay: $delay;
+}
+

@@ -1,0 +1,19 @@
+ @mixin d-flex($flex,$justify,$align,$direction) {
+    display: $flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+ }
+
+ @mixin d-grid($grid,$column,$row){
+   display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+ }
+ @mixin flex-wrap($flex,$justify,$wrap,$align,$direction){
+   display: $flex;
+   justify-content: $justify;
+   flex-wrap: $wrap;
+   align-items: $align;
+   flex-direction: $direction;
+ }

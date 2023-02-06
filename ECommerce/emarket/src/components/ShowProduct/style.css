@@ -1,0 +1,16 @@
+.Card{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 40px;
+    padding: 30px;
+}
+
+.ant-card .ant-card-cover img {
+    border-radius: 8px 20px 0 0;
+    
+  }
+
+ 

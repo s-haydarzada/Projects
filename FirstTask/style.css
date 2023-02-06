@@ -1,0 +1,158 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 34px 40px;
+}
+
+ul {
+    list-style: none;
+
+}
+
+.logo {
+    display: flex;
+}
+
+.img {
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: black;
+}
+
+.logo,
+ul,
+.registrations {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo li {
+    font-size: 13px;
+    line-height: 13px;
+    color: #21383E;
+
+}
+
+.registrations {
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.logo li {
+    margin: 0 20px;
+
+}
+
+.login {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(229, 221, 221);
+    border-radius: 0px 0px 0px 30px;
+    text-align: center;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin-top: 30px;
+    position: relative;
+}
+
+.hero-container__item {
+    margin: 40px;
+}
+
+.hero-container__item h1 {
+    color: #121212;
+    font-weight: 400;
+    line-height: 40px;
+    font-style: normal;
+    letter-spacing: -0.5px;
+    font-size: 30px;
+}
+
+.hero-container__item p {
+    color: #21383E;
+    font-weight: 400;
+    line-height: 40px;
+    font-style: normal;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    mix-blend-mode: normal;
+    opacity: 0.7;
+}
+
+.first {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+
+
+}
+
+.second {
+    grid-column: 3/4;
+    grid-row: 2/3;
+    
+
+}
+
+.third {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 200px;
+    justify-self: end;
+}
+
+.contact{
+    width: 550px;
+    height: 100px;
+     border: 1px solid gray;
+     position: absolute;
+     top: 40%;
+     left: 10%;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+}
+.btn{
+    width: 150px;
+    height: 50px;
+    background: #725BA2;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+  
+}
+.contact__item h6{
+    color: #7D8186;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+
+}

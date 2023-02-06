@@ -1,0 +1,106 @@
+@import "./mixin";
+@import "./colors";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.wrapper {
+    margin: 20px;
+    padding: 20px;
+}
+
+.navbar {
+    @include d-flex(flex, space-between, center, row);
+
+    &__logo__item {
+        margin: 0px 10px;
+    }
+
+    &__search {
+        border: 1px solid $color__gray;
+        width: 180px;
+        height: 40px;
+        margin-top: 10px;
+        @include d-flex(flex, space-between, center, row);
+
+        &__icon {
+            margin-left: 10px;
+            font-size: 1.3rem;
+        }
+
+        .search {
+            margin-right: 40px;
+            font-size: 1.2rem;
+        }
+    }
+
+    &__item {
+        @include d-flex(flex, space-between, center, row);
+
+        &__info {
+            margin-right: 30px;
+            font-size: 1.5rem;
+            padding-top: 30px;
+
+            &:hover {
+
+                background: $color__blue;
+                transition: 1s ease-out;
+            }
+        }
+    }
+}
+
+
+.main__part {
+    @include d-grid(grid, (3, 1fr), (2, 1fr));
+    width: 1200px;
+    height: 450px;
+    margin: 10px;
+
+
+    &__first {
+        @include d-flex(flex, space-between, center, row);
+        padding-right: 2rem;
+        margin: 30px;
+
+    }
+
+    &__inform {
+        padding-right: 30px;
+        margin-left: 10px;
+    }
+
+    &__info {
+
+
+        &__title {
+            font-size: 1.4rem;
+        }
+
+        &__subtitle {
+            font-size: 0.9rem;
+            padding: 10px 0;
+        }
+    }
+
+    .items {
+        padding: 5px;
+        border-radius: 5px;
+
+        &__item {
+            @include flex-wrap (flex, space-between, wrap, center, row);
+
+            width: 60px;
+            height: 20px;
+            border-radius: 10px;
+            border: 1px solid black;
+            padding-left: 5px;
+            font-size: smaller;
+        }
+    }
+}

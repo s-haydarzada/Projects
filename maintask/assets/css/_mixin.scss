@@ -1,0 +1,26 @@
+@mixin d-flex($flex, $justify, $align, $direction) {
+    display: $flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+@mixin d-grid($grid,$columns,$row){
+    display: $grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $row;
+}
+@mixin second__title {
+    &__title {
+        color: $color_green;
+        font-size: 1rem;
+        font-weight: normal;
+    }
+
+    &__subtitle {
+        font-size: 1.8rem;
+        color: $color_blue;
+        margin: 20px 0;
+        text-transform: uppercase;
+    }
+}
